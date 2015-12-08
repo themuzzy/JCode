@@ -6,12 +6,44 @@ using namespace std;
 
 // Runtime Variables
 string command;
-string file_name;
 string line;
 int line_number = 0;
 bool editing_file = false;
+bool program_running = true;
+
+// Start Editing
+void start_editing(){
+  ofstream project("project.js")
+  editing_file = true;
+  line_number = 0;
+  while(editing_file == true){
+    line_number += 1;
+    getline(cin, line);
+    if(line == "!SAVE"){
+      project.close();
+      editing_file = false;
+    }
+  }
+}
+
+// Command Operator
+void command_operator(){
+  getline(cin, command);
+  if(command == "create"){
+    start_editing();
+  }
+  if(command == "backup"){
+    system("cp project.js project.backup");
+  }
+  if(command == "exit"){
+    program_running = false;
+  }
+}
 
 // Main Function
 int main(){
-  
+  // Call the command operator
+  while(program_running == true){
+    command_operator();
+  }
 }
