@@ -22,6 +22,8 @@ void start_editing(){
     if(line == "!SAVE"){
       project.close();
       editing_file = false;
+    } else {
+      project << line << "\n";
     }
   }
 }
