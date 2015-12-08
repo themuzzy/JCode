@@ -13,7 +13,7 @@ bool program_running = true;
 
 // Start Editing
 void start_editing(){
-  ofstream project("project.js")
+  ofstream project("project.js");
   editing_file = true;
   line_number = 0;
   while(editing_file == true){
