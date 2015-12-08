@@ -18,6 +18,7 @@ void start_editing(){
   line_number = 0;
   while(editing_file == true){
     line_number += 1;
+    cout << line_number << " : ";
     getline(cin, line);
     if(line == "!SAVE"){
       project.close();
@@ -30,6 +31,7 @@ void start_editing(){
 
 // Command Operator
 void command_operator(){
+  cout << "Command: ";
   getline(cin, command);
   if(command == "create"){
     start_editing();
