@@ -7,3 +7,6 @@ Next Generation Javascript Editor
 
 ## Availability
 + Linux
+
+## Screenshot
+![Screenshot](http://i.imgur.com/26Hlusel.png)
